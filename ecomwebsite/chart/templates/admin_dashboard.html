@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+<h3>Users</h3>
+<ul>
+    {% for user in users %}
+        <li>{{ user.username }} - {{ user.profile.role }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Products</h3>
+<ul>
+    {% for product in products %}
+        <li>{{ product.name }} - {{ product.price }}</li>
+    {% endfor %}
+</ul>
+    
+</body>
+</html>

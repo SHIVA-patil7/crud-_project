@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECKOUT</title>
+</head>
+<body>
+    {% if  payment_allow == "allow"%}
+    <a href="{% url "card_payment" %}">Go for payment</a>
+    {%else%}
+    {%if messages%}
+    {%for message in messages%}
+    <script>{{message}}</script>
+    {%endfor%}
+    {%endif%}
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{form}}
+    <input type="submit" value="checkout">
+    </form>
+    {%endif%}
+   
+</body>
+</html>

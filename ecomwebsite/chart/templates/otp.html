@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<center><strong>CONFIRM YOUR ACCOUNT</strong></center>
+<center><p>check the inbox of the email-{{email}} and enter the otp</p></cenetr>
+<body>
+    <form action='{% url "otp_verification" %}' method='POST'>
+        {% csrf_token %}
+        <center>Enter the otp : <input type='text' placeholder='enter the otp' name='otp'><br> 
+        <center><button type="submit" >verify</button>
+</body>
+</html>

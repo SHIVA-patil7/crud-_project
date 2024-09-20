@@ -1,0 +1,54 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add to cart</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->  
+    <div class="container ">
+      <div class="row ">
+        
+        
+        
+        {% for product in products%}
+        <div class="col-md-6">
+     
+          <div class='card' style="color:white;">
+            <div>
+              <img src="{{product.img.url}}" >
+            </div>
+            <div>
+              <h1 style="color:white;">{{product.name}}</h1>
+            </div>
+            <div>
+                <ul>
+                <li ><b>categery</b>:{{product.category.category_name}}</li>
+                <li><b>price</b>:{{product.price}}</li>
+                <li><b>product_available_count</b>:{{product.product_available_count}}</li>
+                <li><a href="{% url "Product_desc" product.pk  %}">View More</a></li>
+                </ul>
+            </div>
+          </div>
+
+        </div>
+        {%endfor%} 
+        
+
+      </div>
+
+
+
+    </div>
+  
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

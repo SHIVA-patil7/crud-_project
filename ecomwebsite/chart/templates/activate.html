@@ -1,0 +1,7 @@
+{% autoescape off %}
+Hi{{user.username}}
+Please check this link is verified this email
+
+http://{{domain}} {% url "activate" uidb64=uid token=token %}
+
+{% endautoescape %}
