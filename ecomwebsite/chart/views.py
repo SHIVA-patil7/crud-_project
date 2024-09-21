@@ -26,6 +26,7 @@ from django.http import JsonResponse
 from .forms import CardForm
 
 def regform(request):
+    print("hi")
     if request.method=='POST':
         fm=Userregisterform(request.POST)
         if fm.is_valid():
