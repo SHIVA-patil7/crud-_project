@@ -266,6 +266,7 @@ class ChangePasswordView(PasswordChangeView):
 
 def homepage(request):
     products=Product.objects.all()
+    print(products)
     return render(request,'home.html',{'products':products})
 
 
